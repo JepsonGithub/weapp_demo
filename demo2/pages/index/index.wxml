@@ -1,13 +1,27 @@
-<!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+  <!-- mustance 小胡子语法, 专门用来输出逻辑层暴露的数据  -->
+  <text>{{ message }}</text>
+  <!-- mustance 可以作用在元素的 内容 和 属性上  -->
+  <input value='{{ message }}'></input>
+
+  <!-- 写在小程序内 wxml 中的值, 属性值在双引号内部, 永远是字符串  -->
+  <checkbox checked="checked"></checkbox>
+
+  <!-- 想要传一个真正意义上的 false  -->
+  <!-- mustance 可以用于声明有类型的值  -->
+  <checkbox checked="{{ false }}"></checkbox>
+
+  <input value='{{ foo.addPostfix( message ) }}'></input>
+
 </view>
+
+<!-- wxs  -->
+<wxs module="foo">
+  // 这里可以导出一个对象, 这个对象可以在页面中直接使用
+  // 通过 commonjs 规范导出成员
+  module.exports = {
+    addPostfix: function( input ) {
+      return input + "$$$wxs"
+    }
+  }
+</wxs>

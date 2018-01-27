@@ -1,0 +1,37 @@
+<!-- 注意: 在小程序中, 就算在 wx:if 里面, 也要使用小胡子语法 {{}}  -->
+<view wx:if="{{ isLoading }}">
+  <text>loading...</text>
+</view>
+
+<!-- <view wx:elif=""></view> -->
+
+<view wx:else>
+  <text>load done</text>
+</view>
+
+
+--------------------
+<!-- 上面这种做法虽然可以, 但是这样做不太好
+     对于频繁需要切换显示状态的元素, 不应该用 wx:if, 应该用 hidden
+  -->
+
+<view hidden="{{ !isLoading }}">
+  <text>loading...</text>
+</view>
+
+<view hidden="{{ isLoading }}">
+  <text>load done</text>
+</view>
+
+
+--------------------------
+
+
+<view>
+  <!-- block 只是一个包装元素, 不会对页面中的元素有影响 -->
+  <block wx:if="{{ isLoading }}">
+    <text> hello </text>
+    <text> world </text>
+  </block>
+  <text>不要隐藏我</text>
+</view> 

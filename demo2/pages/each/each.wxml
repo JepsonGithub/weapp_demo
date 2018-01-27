@@ -1,0 +1,21 @@
+<!-- 默认约定通过 item 访问单项, index 访问索引  -->
+<!-- 也可以通过 wx:for-item="", wx-for-index="" 定制  -->
+<!-- <view>
+  <view wx:for="{{ students }}" wx:for-item="v" wx:for-index="i">
+    <text>索引: {{ i }}, </text>
+    <text>name: {{ v.name }}, </text>
+    <text>age: {{ v.age }}</text>  
+  </view>
+</view> -->
+
+<view>
+  <!-- 注意: wx:key 中写的是遍历单项中的属性名字  -->
+  <!-- 如果值本身就不是对象, 没属性成员, 可以通过 *this 这个保留值, 
+       让自己作为key, 去指定当前被遍历的元素  -->
+  <view wx:for="{{ students }}" wx:key="id">
+    <checkbox />
+    <text>{{ item.name }}</text>
+  </view>
+</view>
+
+<button bindtap='addItemHandle'>添加一条数据</button>

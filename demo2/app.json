@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/each/each",
+    "pages/cond/cond",
     "pages/index/index",
     "pages/logs/logs"
   ],
