@@ -1,0 +1,3 @@
+<view catchtap="viewTapHandle">
+  <button catchtap="tapHandle">Click me</button>
+</view>

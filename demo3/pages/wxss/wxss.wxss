@@ -1,0 +1,8 @@
+/* pages/wxss/wxss.wxss */
+
+
+.box {
+  width: 50%;
+  height: 400px;
+  background-color: pink;
+}

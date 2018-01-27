@@ -1,0 +1,4 @@
+<text>{{ foo }}</text>
+
+<!-- 文本框发送变化时触发  -->
+<input value="{{ foo }}" bindinput="inputChangeHandle"></input>

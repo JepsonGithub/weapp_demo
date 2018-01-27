@@ -1,0 +1,20 @@
+<view>
+  <text>item 1</text>
+  <button data-id="1" bindtap='removeHandle'>remove</button>
+</view>
+<view>
+  <text>item 2</text>
+  <button data-id="2" bindtap='removeHandle'>remove</button>
+</view>
+<view>
+  <text>item 3</text>
+  <button data-id="3" bindtap='removeHandle'>remove</button>
+</view>
+<view>
+  <text>item 4</text>
+  <button data-id="4" bindtap='removeHandle'>remove</button>
+</view>
+<view>
+  <text>item 5</text>
+  <button data-id="5" bindtap='removeHandle'>remove</button>
+</view>
