@@ -1,0 +1,4 @@
+<!--pages/index/index.wxml-->
+<text>pages/index/index.wxml</text>
+
+<navigator url='/pages/page1/page1'>{{ foo }}</navigator>
